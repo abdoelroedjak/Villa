@@ -1,0 +1,82 @@
+{
+  "villas": [
+    {
+      "id": "vil-aksata",
+      "name": "Villa Aksata",
+      "tagline": "Villa konsep bohemian di Batu serasa di Bali",
+      "description": "Menghadirkan pesona liburan tropis bohemian ala Bali di kesejukan udara Kota Batu. Dilengkapi dengan kolam renang pribadi (private pool), 3 kamar tidur luas, 3 kamar mandi, spot rooftop santai dengan pergola kayu dan pemandangan pegunungan, serta dapur lengkap.",
+      "location": "Kavling Jalibar Blok NM-8, RT 007/RW 06, Tlekung, Kec. Junrejo, Kota Batu, Jawa Timur 65327",
+      "mapsUrl": "https://maps.app.goo.gl/9wx568xu14obMBP3A",
+      "instagramUrl": "https://www.instagram.com/villaaksata/",
+      "whatsapp": "082225665610",
+      "pricePerNight": 1750000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "maxGuests": 10,
+      "rating": 9.5,
+      "reviewCount": 18,
+      "featured": true,
+      "images": [
+        "/images/pool-floating-breakfast.jpg",
+        "/images/facade-aksata.jpg",
+        "/images/bedroom-pool-view.jpg",
+        "/images/rooftop-pergola.jpg",
+        "/images/rooftop-lounge.jpg"
+      ],
+      "amenities": [
+        "Private Pool",
+        "3 Kamar Tidur",
+        "3 Kamar Mandi",
+        "Konsep Bohemian Bali",
+        "Rooftop Santai & Pergola",
+        "Floating Breakfast Tray",
+        "Dapur & Alat Masak",
+        "Free Wi-Fi",
+        "Water Heater",
+        "Dekat BNS & Jatim Park"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "author": "Keluarga Handoko",
+      "source": "Ulasan Tamu Google Maps",
+      "rating": 5,
+      "text": "Villa konsep bohemian di Batu serasa di Bali, private pool-nya bersih dan estetik banget buat foto-foto. Suasana tenang dan udara sejuk.",
+      "date": "Oktober 2026"
+    },
+    {
+      "author": "Rina & Teman-Teman",
+      "source": "Ulasan Tamu Google Maps",
+      "rating": 5,
+      "text": "Cocok banget buat liburan keluarga atau kumpul teman. 3 kamar tidur dan 3 kamar mandi sangat bersih dan nyaman. Dekat ke BNS dan Jatim Park.",
+      "date": "September 2026"
+    },
+    {
+      "author": "Dimas Pratama",
+      "source": "Ulasan Tamu Google Maps",
+      "rating": 5,
+      "text": "Pelayanan admin via WhatsApp sangat ramah dan responsif. Desain villanya persis seperti di foto, spot rooftop-nya juara pas sore hari.",
+      "date": "Agustus 2026"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "bk-101",
+      "bookingCode": "VIL-884920",
+      "villaId": "vil-aksata",
+      "villaName": "Villa Aksata",
+      "guestName": "Budi Santoso",
+      "guestEmail": "budi.santoso@gmail.com",
+      "guestPhone": "081234567890",
+      "checkIn": "2026-11-05",
+      "checkOut": "2026-11-07",
+      "nights": 2,
+      "guests": 6,
+      "totalAmount": 3500000,
+      "status": "CONFIRMED",
+      "specialRequest": "Tolong siapkan floating breakfast untuk pagi hari pertama.",
+      "createdAt": "2026-10-25T14:20:00Z"
+    }
+  ]
+}

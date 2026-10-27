@@ -1,0 +1,27 @@
+{
+  "name": "villa-platform",
+  "version": "1.0.0",
+  "description": "Full-stack Villa Booking & Management Platform",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node --watch server/app.js",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "keywords": [
+    "villa",
+    "booking",
+    "express",
+    "nodejs",
+    "hospitality",
+    "dashboard"
+  ],
+  "author": "abdoelroedjak",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  }
+}

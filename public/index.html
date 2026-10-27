@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa Aksata — Villa Konsep Bohemian di Batu Serasa di Bali</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-600/30">
+          <i data-lucide="palmtree" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-extrabold tracking-tight text-slate-900">Villa <span class="text-emerald-600">Aksata</span></span>
+          <span class="hidden sm:inline-block ml-2 px-2.5 py-0.5 text-[10px] font-semibold bg-emerald-100 text-emerald-800 rounded-full uppercase tracking-wider">Kota Batu</span>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+        <a href="#tentang" class="hover:text-emerald-600 transition-colors">Tentang Villa</a>
+        <a href="#galeri" class="hover:text-emerald-600 transition-colors">Galeri Foto</a>
+        <a href="#fasilitas" class="hover:text-emerald-600 transition-colors">Fasilitas</a>
+        <a href="#testimoni" class="hover:text-emerald-600 transition-colors">Ulasan Google Maps</a>
+        <a href="https://maps.app.goo.gl/9wx568xu14obMBP3A" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-600 transition-colors flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span>Lokasi Maps</span>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/6282225665610?text=Halo%20Admin%20Villa%20Aksata,%20saya%20ingin%20tanya%20ketersediaan%20dan%20booking" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm flex items-center gap-2 shadow-md shadow-emerald-600/20 transition-all">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="/admin" class="px-3 py-2.5 rounded-xl border border-slate-300 hover:border-slate-800 text-slate-700 font-medium text-xs flex items-center gap-1.5 transition-all">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+          <span class="hidden sm:inline">Admin</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Real Photo -->
+  <header class="relative bg-slate-950 text-white overflow-hidden">
+    <img src="/images/pool-floating-breakfast.jpg" alt="Villa Aksata Pool" class="absolute inset-0 w-full h-full object-cover object-center opacity-45">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 md:pt-28 md:pb-32 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md">
+        <i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
+        <span>Villa Konsep Bohemian di Batu Serasa di Bali</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
+        Selamat Datang di Villa Aksata Kota Batu
+      </h1>
+      <p class="mt-5 text-base sm:text-lg text-slate-200 max-w-2xl mx-auto font-light leading-relaxed">
+        Suasana private staycation estetik dengan nuansa tropis Bali di sejuknya hawa pegunungan Kota Batu. Lengkap dengan <strong>3 Kamar Tidur</strong>, <strong>3 Kamar Mandi</strong>, dan <strong>Private Pool</strong>.
+      </p>
+
+      <!-- Key Specs Badges -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-bold">
+        <div class="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center gap-2">
+          <i data-lucide="waves" class="w-4 h-4 text-teal-300"></i>
+          <span>Private Pool</span>
+        </div>
+        <div class="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center gap-2">
+          <i data-lucide="bed-double" class="w-4 h-4 text-emerald-300"></i>
+          <span>3 Kamar Tidur (3 KT)</span>
+        </div>
+        <div class="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center gap-2">
+          <i data-lucide="bath" class="w-4 h-4 text-emerald-300"></i>
+          <span>3 Kamar Mandi (3 KM)</span>
+        </div>
+        <div class="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center gap-2">
+          <i data-lucide="sun" class="w-4 h-4 text-amber-300"></i>
+          <span>Rooftop Pergola</span>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a href="https://wa.me/6282225665610?text=Halo%20Villa%20Aksata,%20saya%20mau%20reservasi" target="_blank" rel="noopener noreferrer" class="py-3.5 px-6 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl shadow-xl shadow-emerald-600/30 flex items-center gap-2.5 text-sm transition-all">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>Booking Langsung via WhatsApp (082225665610)</span>
+        </a>
+        <button onclick="openBookingModal('vil-aksata')" class="py-3.5 px-6 bg-white/90 hover:bg-white text-slate-900 font-bold rounded-2xl shadow-lg text-sm flex items-center gap-2 transition-all">
+          <i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i>
+          <span>Form Reservasi Online</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Photo Gallery Showcase -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="galeri">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+      <div>
+        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Foto Real Properti</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Galeri Asli Villa Aksata</h2>
+        <p class="text-slate-500 text-sm mt-1">Foto asli langsung dari lokasi Villa Aksata di Junrejo, Kota Batu</p>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="https://www.instagram.com/villaaksata/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-pink-50 text-pink-700 hover:bg-pink-100 border border-pink-200 text-xs font-bold flex items-center gap-1.5 transition-all">
+          <i data-lucide="instagram" class="w-4 h-4"></i>
+          <span>@villaaksata</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 1. Swimming Pool & Floating Breakfast -->
+      <div class="group relative rounded-3xl overflow-hidden bg-slate-900 shadow-sm hover:shadow-xl transition-all h-80">
+        <img src="/images/pool-floating-breakfast.jpg" alt="Private Pool Villa Aksata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-600 text-white uppercase">Private Pool</span>
+          <h3 class="font-extrabold text-base mt-1">Kolam Renang Pribadi & Floating Breakfast</h3>
+          <p class="text-xs text-slate-300">Desain dinding batu alam, pelampung angsa & aksen kaktus bohemian.</p>
+        </div>
+      </div>
+
+      <!-- 2. Master Bedroom Pool View -->
+      <div class="group relative rounded-3xl overflow-hidden bg-slate-900 shadow-sm hover:shadow-xl transition-all h-80">
+        <img src="/images/bedroom-pool-view.jpg" alt="Kamar Tidur Villa Aksata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-600 text-white uppercase">Kamar Tidur</span>
+          <h3 class="font-extrabold text-base mt-1">Kamar Tidur Utama View Langsung Kolam</h3>
+          <p class="text-xs text-slate-300">Pintu lengkung kaca estetik dengan pemandangan langsung ke private pool.</p>
+        </div>
+      </div>
+
+      <!-- 3. Facade Exterior Aksata -->
+      <div class="group relative rounded-3xl overflow-hidden bg-slate-900 shadow-sm hover:shadow-xl transition-all h-80">
+        <img src="/images/facade-aksata.jpg" alt="Fasad Depan Villa Aksata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-600 text-white uppercase">Fasad Depan</span>
+          <h3 class="font-extrabold text-base mt-1">Fasad Bohemian Mediterranean</h3>
+          <p class="text-xs text-slate-300">Arsitektur putih bersih, ornamen kayu, dan carport beratap lengkung.</p>
+        </div>
+      </div>
+
+      <!-- 4. Rooftop Pergola & Flowers -->
+      <div class="group relative rounded-3xl overflow-hidden bg-slate-900 shadow-sm hover:shadow-xl transition-all h-80 sm:col-span-2 lg:col-span-2">
+        <img src="/images/rooftop-pergola.jpg" alt="Rooftop Pergola Villa Aksata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-600 text-white uppercase">Rooftop Area</span>
+          <h3 class="font-extrabold text-lg mt-1">Rooftop Gazebo & Spot Santai Sore</h3>
+          <p class="text-xs text-slate-300">Lantai batu alam hitam-putih, kanopi kayu alami, bunga bougainvillea, dan lampu anyaman.</p>
+        </div>
+      </div>
+
+      <!-- 5. Rooftop Lounge View -->
+      <div class="group relative rounded-3xl overflow-hidden bg-slate-900 shadow-sm hover:shadow-xl transition-all h-80">
+        <img src="/images/rooftop-lounge.jpg" alt="Rooftop Panorama Villa Aksata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-600 text-white uppercase">Panorama</span>
+          <h3 class="font-extrabold text-base mt-1">Udara Sejuk & Panorama Bukit Batu</h3>
+          <p class="text-xs text-slate-300">Tempat sempurna menikmati kopi atau teh bersama keluarga di Kota Batu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Villa Card & Direct Booking Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="villas">
+    <div id="villaGrid" class="grid grid-cols-1 gap-8">
+      <!-- Populated by JS -->
+    </div>
+  </main>
+
+  <!-- Real Testimonials from Google Maps -->
+  <section class="bg-white border-y border-slate-200 py-16" id="testimoni">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold mb-3">
+          <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+          <span>Ulasan Real dari Google Maps</span>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Apa Kata Tamu Villa Aksata?</h3>
+        <p class="text-slate-500 text-xs sm:text-sm mt-2">Pengalaman nyata dari tamu yang telah menginap dan menikmati staycation di Villa Aksata Kota Batu.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="reviewsContainer">
+        <!-- Card 1 -->
+        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed italic">
+              "Villa konsep bohemian di Batu serasa di Bali, private pool-nya bersih dan estetik banget buat foto-foto. Suasana tenang dan udara sejuk pegunungan."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/80 flex items-center justify-between">
+            <div>
+              <h4 class="font-bold text-slate-900 text-xs">Keluarga Handoko</h4>
+              <p class="text-[11px] text-slate-400">Tamu Keluarga • Google Maps Review</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/512px-Google_Maps_icon_%282020%29.svg.png" alt="Google Maps" class="w-5 h-5 opacity-80">
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed italic">
+              "Cocok banget buat liburan keluarga atau kumpul teman. 3 kamar tidur dan 3 kamar mandi sangat bersih dan nyaman. Dekat ke BNS dan Jatim Park."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/80 flex items-center justify-between">
+            <div>
+              <h4 class="font-bold text-slate-900 text-xs">Rina & Rombongan</h4>
+              <p class="text-[11px] text-slate-400">Staycation Rombongan • Google Maps Review</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/512px-Google_Maps_icon_%282020%29.svg.png" alt="Google Maps" class="w-5 h-5 opacity-80">
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed italic">
+              "Pelayanan admin via WhatsApp sangat ramah dan responsif. Desain villanya persis seperti di foto, spot rooftop-nya juara pas sore hari!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/80 flex items-center justify-between">
+            <div>
+              <h4 class="font-bold text-slate-900 text-xs">Dimas Pratama</h4>
+              <p class="text-[11px] text-slate-400">Tamu Staycation • Google Maps Review</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/512px-Google_Maps_icon_%282020%29.svg.png" alt="Google Maps" class="w-5 h-5 opacity-80">
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Map & Contact Banner -->
+      <div class="mt-12 p-8 rounded-3xl bg-gradient-to-r from-slate-900 to-slate-800 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>Lokasi Strategis di Junrejo, Kota Batu</span>
+          </div>
+          <h4 class="text-xl sm:text-2xl font-extrabold">Kavling Jalibar, Desa Tlekung, Kota Batu</h4>
+          <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-xl">
+            Akses cepat ke Coban Rais, BNS, Jatim Park 2 & 3. Dikelilingi udara segar dan pemandangan perbukitan.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://maps.app.goo.gl/9wx568xu14obMBP3A" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs flex items-center gap-2 transition-all shadow-md">
+            <i data-lucide="navigation" class="w-4 h-4 text-emerald-600"></i>
+            <span>Petunjuk Arah Google Maps</span>
+          </a>
+          <a href="https://www.instagram.com/villaaksata/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+            <span>Instagram @villaaksata</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white">
+          <i data-lucide="palmtree" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-lg font-bold text-white tracking-tight">Villa <span class="text-emerald-500">Aksata</span></span>
+          <p class="text-[11px] text-slate-500">Villa Konsep Bohemian di Kota Batu Serasa di Bali</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap items-center gap-6 text-xs text-slate-400">
+        <a href="https://wa.me/6282225665610" target="_blank" class="hover:text-emerald-400 flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>WA: 082225665610</span>
+        </a>
+        <a href="https://www.instagram.com/villaaksata/" target="_blank" class="hover:text-pink-400 flex items-center gap-1">
+          <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+          <span>@villaaksata</span>
+        </a>
+        <a href="https://maps.app.goo.gl/9wx568xu14obMBP3A" target="_blank" class="hover:text-emerald-400 flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+          <span>Google Maps</span>
+        </a>
+        <a href="/admin" class="hover:text-white">Admin</a>
+      </div>
+
+      <p class="text-xs text-slate-500">
+        &copy; 2026 Villa Aksata Batu. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal: Detail Villa & Booking -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+      <div class="relative">
+        <!-- Close Button -->
+        <button onclick="closeBookingModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center transition-all">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Main Image -->
+        <div class="h-72 sm:h-96 w-full relative overflow-hidden rounded-t-3xl bg-slate-900">
+          <img id="modalVillaImg" src="/images/pool-floating-breakfast.jpg" alt="Villa Detail" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 text-white">
+            <span id="modalVillaBadge" class="px-3 py-1 bg-emerald-600 text-xs font-bold rounded-full uppercase tracking-wider mb-2 inline-block">Konsep Bohemian Bali</span>
+            <h2 id="modalVillaName" class="text-2xl sm:text-3xl font-extrabold">Villa Aksata</h2>
+            <p id="modalVillaLoc" class="text-sm text-slate-300 flex items-center gap-1 mt-1">
+              <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+              <span>Kavling Jalibar, Kota Batu, Jawa Timur</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Left Column: Details -->
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Tentang Villa Aksata</h3>
+            <p id="modalVillaDesc" class="text-slate-600 text-sm leading-relaxed"></p>
+          </div>
+
+          <!-- Specs -->
+          <div class="grid grid-cols-3 gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100 text-center">
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase">Fasilitas Utama</p>
+              <p class="text-sm sm:text-base font-bold text-slate-800 mt-0.5 text-emerald-600">Private Pool</p>
+            </div>
+            <div class="border-x border-slate-200">
+              <p class="text-xs text-slate-400 font-semibold uppercase">Kamar Tidur</p>
+              <p class="text-sm sm:text-base font-bold text-slate-800 mt-0.5">3 KT</p>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase">Kamar Mandi</p>
+              <p class="text-sm sm:text-base font-bold text-slate-800 mt-0.5">3 KM</p>
+            </div>
+          </div>
+
+          <!-- Amenities -->
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">Fasilitas Termasuk</h3>
+            <div id="modalVillaAmenities" class="grid grid-cols-2 gap-2.5 text-sm text-slate-600"></div>
+          </div>
+
+          <!-- WhatsApp Direct Link -->
+          <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-emerald-900">Butuh respons cepat atau negosiasi?</p>
+                <p class="text-[11px] text-emerald-700">Hubungi langsung nomor WhatsApp 082225665610</p>
+              </div>
+            </div>
+            <a href="https://wa.me/6282225665610?text=Halo%20Admin%20Villa%20Aksata,%20saya%20tertarik%20untuk%20booking" target="_blank" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all">
+              Chat WA
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Booking Form -->
+        <div class="lg:col-span-5 bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-baseline justify-between border-b border-slate-200 pb-4 mb-4">
+              <div>
+                <span id="modalVillaPrice" class="text-2xl font-extrabold text-emerald-600">Rp 1.750.000</span>
+                <span class="text-xs text-slate-500 font-medium"> / malam</span>
+              </div>
+              <div class="flex items-center gap-1 text-sm font-bold text-slate-800">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                <span id="modalVillaRating">9.5/10 (Google & OTA)</span>
+              </div>
+            </div>
+
+            <!-- Booking Form Elements -->
+            <form id="reservationForm" onsubmit="submitReservation(event)" class="space-y-3.5">
+              <input type="hidden" id="bookVillaId" value="vil-aksata">
+
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Check-in</label>
+                  <input type="date" id="bookCheckIn" required onchange="calculatePrice()" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Check-out</label>
+                  <input type="date" id="bookCheckOut" required onchange="calculatePrice()" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Jumlah Tamu</label>
+                <input type="number" id="bookGuests" min="1" max="15" value="6" required class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Nama Lengkap Pemesan</label>
+                <input type="text" id="bookGuestName" placeholder="Contoh: Budi Santoso" required class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+              </div>
+
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Email</label>
+                  <input type="email" id="bookGuestEmail" placeholder="nama@email.com" required class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">No. WhatsApp</label>
+                  <input type="tel" id="bookGuestPhone" placeholder="08xxxxxxxx" required class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Permintaan Khusus (Opsional)</label>
+                <textarea id="bookSpecialRequest" rows="2" placeholder="Floating breakfast, dekorasi, perkiraan jam tiba..." class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
+              </div>
+
+              <!-- Price Breakdown Box -->
+              <div class="pt-3 border-t border-slate-200 space-y-1.5 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span id="priceCalcLabel">Rp 1.750.000 x 1 malam</span>
+                  <span id="priceSubtotal" class="font-semibold text-slate-800">Rp 1.750.000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Kebersihan & Pelayanan</span>
+                  <span class="text-emerald-600 font-semibold">Termasuk (Gratis)</span>
+                </div>
+                <div class="flex justify-between text-sm font-extrabold text-slate-900 pt-2 border-t border-dashed border-slate-300">
+                  <span>Total Biaya</span>
+                  <span id="priceTotal" class="text-emerald-700 text-base">Rp 1.750.000</span>
+                </div>
+              </div>
+
+              <button type="submit" id="btnSubmitBooking" class="w-full mt-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 transition-all">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Konfirmasi Reservasi Villa</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Booking Success Voucher -->
+  <div id="voucherModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 text-center">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="check" class="w-8 h-8"></i>
+      </div>
+      <h3 class="text-2xl font-extrabold text-slate-900">Reservasi Sukses Dikonfirmasi!</h3>
+      <p class="text-slate-500 text-xs mt-1">Simpan kode reservasi di bawah ini untuk check-in di Villa Aksata.</p>
+
+      <div class="my-6 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl">
+        <p class="text-xs uppercase font-bold text-emerald-800 tracking-wider">Kode Reservasi Anda</p>
+        <p id="voucherCode" class="text-3xl font-extrabold text-emerald-700 tracking-wider mt-1 select-all font-mono">VIL-000000</p>
+      </div>
+
+      <div class="text-left space-y-2 text-xs text-slate-600 bg-slate-50 p-4 rounded-2xl mb-6">
+        <div class="flex justify-between"><span class="text-slate-400">Villa:</span> <span id="voucherVilla" class="font-bold text-slate-800">Villa Aksata</span></div>
+        <div class="flex justify-between"><span class="text-slate-400">Nama Tamu:</span> <span id="voucherGuest" class="font-bold text-slate-800"></span></div>
+        <div class="flex justify-between"><span class="text-slate-400">Periode Menginap:</span> <span id="voucherDates" class="font-bold text-slate-800"></span></div>
+        <div class="flex justify-between"><span class="text-slate-400">Total Pembayaran:</span> <span id="voucherTotal" class="font-bold text-emerald-600"></span></div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a id="btnWaConfirmation" href="https://wa.me/6282225665610" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-all">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Kirim Bukti ke WhatsApp</span>
+        </a>
+        <button onclick="closeVoucherModal()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition-all">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client Script -->
+  <script src="/js/app.js"></script>
+</body>
+</html>

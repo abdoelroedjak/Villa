@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin & Owner Dashboard — Villa Aksata</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- Top Navigation Bar -->
+  <header class="bg-slate-900 text-white sticky top-0 z-40 border-b border-slate-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-md">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight">Villa <span class="text-emerald-400">Aksata</span></span>
+          <span class="ml-2 px-2 py-0.5 text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-md">DASHBOARD OWNER</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/6282225665610" target="_blank" class="px-3 py-1.5 rounded-lg border border-slate-700 hover:border-emerald-500 hover:text-emerald-400 text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>WA: 082225665610</span>
+        </a>
+        <a href="/" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>Buka Website Tamu</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+    <!-- Header Title -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Manajemen Operasional Villa Aksata</h1>
+        <p class="text-slate-500 text-xs sm:text-sm mt-1">Pantau reservasi tamu, kelola ketersediaan kamar, dan kontrol operasional properti.</p>
+      </div>
+
+      <!-- Action Button -->
+      <button onclick="openVillaModal()" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs sm:text-sm flex items-center gap-2 shadow-md shadow-emerald-600/20 transition-all">
+        <i data-lucide="edit" class="w-4 h-4"></i>
+        <span>Kelola Info Villa Aksata</span>
+      </button>
+    </div>
+
+    <!-- KPI Metric Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+      <!-- Total Revenue -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Pendapatan</p>
+          <h3 id="statRevenue" class="text-2xl font-extrabold text-slate-900 mt-1">Rp 0</h3>
+          <p class="text-[11px] text-emerald-600 font-semibold mt-1 flex items-center gap-1">
+            <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> Dari reservasi terkonfirmasi
+          </p>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+          <i data-lucide="wallet" class="w-6 h-6"></i>
+        </div>
+      </div>
+
+      <!-- Total Bookings -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Reservasi</p>
+          <h3 id="statBookings" class="text-2xl font-extrabold text-slate-900 mt-1">0</h3>
+          <p id="statBookingsSub" class="text-[11px] text-slate-500 font-medium mt-1">0 confirmed • 0 pending</p>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+          <i data-lucide="calendar-check" class="w-6 h-6"></i>
+        </div>
+      </div>
+
+      <!-- Specs / Unit Info -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tipe Properti</p>
+          <h3 class="text-xl font-extrabold text-slate-900 mt-1">3 KT • 3 KM</h3>
+          <p class="text-[11px] text-emerald-600 font-medium mt-1">Private Pool Bohemian</p>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+          <i data-lucide="home" class="w-6 h-6"></i>
+        </div>
+      </div>
+
+      <!-- Total Nights Booked -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Malam Terpesan</p>
+          <h3 id="statNights" class="text-2xl font-extrabold text-slate-900 mt-1">0</h3>
+          <p class="text-[11px] text-emerald-600 font-semibold mt-1">Tingkat okupansi stabil</p>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+          <i data-lucide="moon" class="w-6 h-6"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex items-center gap-4 border-b border-slate-200 mb-6 font-bold text-sm">
+      <button onclick="switchTab('bookings')" id="tabBtnBookings" class="pb-3 text-emerald-600 border-b-2 border-emerald-600 flex items-center gap-2">
+        <i data-lucide="calendar" class="w-4 h-4"></i>
+        <span>Daftar Reservasi Tamu</span>
+      </button>
+      <button onclick="switchTab('villas')" id="tabBtnVillas" class="pb-3 text-slate-500 hover:text-slate-800 border-b-2 border-transparent flex items-center gap-2">
+        <i data-lucide="building" class="w-4 h-4"></i>
+        <span>Detail Properti Villa Aksata</span>
+      </button>
+    </div>
+
+    <!-- TAB 1: BOOKINGS MANAGEMENT -->
+    <section id="tabContentBookings" class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-slate-200">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 uppercase">Filter Status:</span>
+          <select id="bookingStatusFilter" onchange="loadBookings()" class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <option value="">Semua Status</option>
+            <option value="CONFIRMED">Dikonfirmasi (CONFIRMED)</option>
+            <option value="PENDING">Menunggu (PENDING)</option>
+            <option value="CHECKED_IN">Tamu Menginap (CHECKED_IN)</option>
+            <option value="CANCELLED">Dibatalkan (CANCELLED)</option>
+          </select>
+        </div>
+
+        <button onclick="loadBookings()" class="px-3 py-1.5 text-xs font-semibold text-slate-600 hover:text-emerald-600 flex items-center gap-1.5 self-end">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+          <span>Muat Ulang Data</span>
+        </button>
+      </div>
+
+      <!-- Table Container -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-400 uppercase font-bold tracking-wider">
+              <tr>
+                <th class="px-5 py-3.5">Kode / Tamu</th>
+                <th class="px-5 py-3.5">Jumlah Tamu</th>
+                <th class="px-5 py-3.5">Check-In / Check-Out</th>
+                <th class="px-5 py-3.5">Total Bayar</th>
+                <th class="px-5 py-3.5">Status</th>
+                <th class="px-5 py-3.5 text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="bookingsTableBody" class="divide-y divide-slate-100">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: VILLA DETAIL & EDIT -->
+    <section id="tabContentVillas" class="hidden space-y-6">
+      <div id="villasAdminGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal: Edit Villa -->
+  <div id="villaModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200 mb-6">
+        <h3 id="villaModalTitle" class="text-xl font-extrabold text-slate-900">Kelola Data Villa Aksata</h3>
+        <button onclick="closeVillaModal()" class="text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="villaForm" onsubmit="saveVilla(event)" class="space-y-4 text-xs">
+        <input type="hidden" id="formVillaId" value="vil-aksata">
+
+        <div>
+          <label class="block font-bold text-slate-600 uppercase mb-1">Nama Villa *</label>
+          <input type="text" id="formVillaName" required value="Villa Aksata" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-bold text-slate-600 uppercase mb-1">Lokasi Destinasi *</label>
+            <input type="text" id="formVillaLoc" required value="Kavling Jalibar, Desa Tlekung, Kec. Junrejo, Kota Batu, Jawa Timur" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 uppercase mb-1">Harga per Malam (Rp) *</label>
+            <input type="number" id="formVillaPrice" required value="1750000" min="500000" step="50000" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-600 uppercase mb-1">Tagline Konsep</label>
+          <input type="text" id="formVillaTagline" value="Villa konsep bohemian di Batu serasa di Bali" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-bold text-slate-600 uppercase mb-1">Nomor WhatsApp Booking</label>
+            <input type="text" id="formVillaWa" value="082225665610" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 uppercase mb-1">Link Google Maps</label>
+            <input type="url" id="formVillaMaps" value="https://maps.app.goo.gl/9wx568xu14obMBP3A" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-600 uppercase mb-1">Deskripsi Lengkap</label>
+          <textarea id="formVillaDesc" rows="3" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">Menghadirkan pesona liburan tropis bohemian ala Bali di kesejukan udara Kota Batu. Dilengkapi dengan kolam renang pribadi (private pool), 3 kamar tidur luas, 3 kamar mandi, spot rooftop santai dengan pergola kayu dan pemandangan pegunungan, serta dapur lengkap.</textarea>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label class="block font-bold text-slate-600 uppercase mb-1">Maks. Tamu</label>
+            <input type="number" id="formVillaGuests" min="1" value="10" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 uppercase mb-1">Kamar Tidur (KT)</label>
+            <input type="number" id="formVillaBeds" min="1" value="3" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 uppercase mb-1">Kamar Mandi (KM)</label>
+            <input type="number" id="formVillaBaths" min="1" value="3" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm">
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-200 flex justify-end gap-3">
+          <button type="button" onclick="closeVillaModal()" class="px-4 py-2.5 rounded-xl border border-slate-300 font-bold text-slate-600 hover:bg-slate-50">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md shadow-emerald-600/30 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span>Simpan Perubahan</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Script -->
+  <script src="/js/admin.js"></script>
+</body>
+</html>
